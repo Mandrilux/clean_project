@@ -1,23 +1,23 @@
 /*
-1;2802;0c** main.c for  in /home/baptiste/project/generator_h
+** main.c for  in /home/baptiste/project/clean_project
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
-** Started on  Mon May 16 10:48:51 2016
-** Last update Wed May 18 12:51:51 2016 
+** Started on  Wed May 18 13:12:43 2016
+** Last update Wed May 18 13:16:42 2016 
 */
 
 #include "my.h"
 
-int		main(int ac, char **av)
+int             main(__attribute__((unused)) int argc, __attribute__((unused))
+		     char **argv)
 {
   DIR		*rep;
 
   if (directory_open(&rep) == -1)
     return (EXIT_FAILURE);
   display_directory(&rep);
-  /* write_def_bottom(core); */
   /* printf("[+] Generation %s successful\n", core->name_h); */
   /* free_all(core); */
   return (EXIT_SUCCESS);

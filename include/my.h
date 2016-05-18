@@ -36,6 +36,7 @@ int		 open_file(char *name_file);
 char		 **alloc(char **re_write, char *name);
 char		 *rostring(char *str);
 char		 *init_str_2(char *str);
+int		 clean_line(char *line);
 
 		/* get_line.c */
 
@@ -43,7 +44,6 @@ int		 my_memset_len(char *s, char c, int size, int flag);
 
 		/* main.c */
 
-int		 main(int ac, char **av);
 int		 directory_open(DIR **rep);
 int		 display_directory(DIR **rep);
 

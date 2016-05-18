@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 13:22:04 2016
-** Last update Wed May 18 12:56:32 2016 
+** Last update Wed May 18 13:18:24 2016 
 */
 
 #include "my.h"
@@ -68,4 +68,10 @@ char    *init_str_2(char *str)
     return (NULL);
   memset(str_2, 0, strlen(str) + 1);
   return (str_2);
+}
+
+int	clean_line(char	*line)
+{
+  int	i = -1;
+  return (1);
 }
