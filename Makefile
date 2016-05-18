@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Wed May 18 12:48:01 2016 
+## Last update Wed May 18 12:55:23 2016 
 ##
 
 
@@ -13,8 +13,9 @@ NAME	=	cleaner
 
 SRC	=	main.c \
 		read.c \
-		get_line.c
-
+		get_line.c \
+		str.c \
+		check.c
 INC_DIR	=	include
 
 OBJ	=	$(SRC:.c=.o)
