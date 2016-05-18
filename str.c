@@ -1,11 +1,11 @@
 /*
-** str.c for  in /home/baptiste/project/generator_h
+** str.c for in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 13:22:04 2016
-** Last update Wed May 18 13:22:27 2016 
+** Last update Wed May 18 13:46:50 2016 
 */
 
 #include "my.h"

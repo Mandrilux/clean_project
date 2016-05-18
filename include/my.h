@@ -23,6 +23,10 @@
 
 char		*strdup(const char *s);
 
+		/* free.c */
+
+int		 free_tab(char **tab);
+
 		/* check.c */
 
 int		 count_tab(char **tab);
