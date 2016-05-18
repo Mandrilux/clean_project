@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 13:22:04 2016
-** Last update Wed May 18 13:18:24 2016 
+** Last update Wed May 18 13:22:27 2016 
 */
 
 #include "my.h"
@@ -70,8 +70,17 @@ char    *init_str_2(char *str)
   return (str_2);
 }
 
-int	clean_line(char	*line)
+char	*clean_line(char	*line)
 {
+  char	*tmp;
   int	i = -1;
-  return (1);
+
+  while (line[++i] != '\0')
+    {
+      if (line[i] == '*')
+	break;
+      line[i] = ' ';
+    }
+  tmp = rostring(line);
+  return (tmp);
 }

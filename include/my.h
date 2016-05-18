@@ -30,13 +30,14 @@ int		 count_tab(char **tab);
 		/* read.c */
 
 int		 open_file(char *name_file);
+int		 write_clean(char **data, char *name);
 
 		/* str.c */
 
 char		 **alloc(char **re_write, char *name);
 char		 *rostring(char *str);
 char		 *init_str_2(char *str);
-int		 clean_line(char *line);
+char		 *clean_line(char *line);
 
 		/* get_line.c */
 
