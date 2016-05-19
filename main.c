@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 13:12:43 2016
-** Last update Wed May 18 13:16:42 2016 
+** Last update Thu May 19 09:44:03 2016 
 */
 
 #include "my.h"
@@ -18,8 +18,6 @@ int             main(__attribute__((unused)) int argc, __attribute__((unused))
   if (directory_open(&rep) == -1)
     return (EXIT_FAILURE);
   display_directory(&rep);
-  /* printf("[+] Generation %s successful\n", core->name_h); */
-  /* free_all(core); */
   return (EXIT_SUCCESS);
 }
 
@@ -47,6 +45,11 @@ int    display_directory(DIR **rep)
 	    {
 	      if (strcmp(&(ent->d_name[strlen(ent->d_name) - 2]), ".c") == 0)
 		open_file(ent->d_name);
+	      if (strncmp("vgcore", ent->d_name, 6) == 0)
+		{
+		  printf("[+] remove %s successful\n", ent->d_name);
+		  remove(ent->d_name);
+		}
 	    }
 	}
       closedir(*rep);
