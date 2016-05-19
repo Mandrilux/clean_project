@@ -5,12 +5,12 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:37:10 2016
-** Last update Wed May 18 13:42:17 2016 
+** Last update Thu May 19 19:37:50 2016 
 */
 
 #include "my.h"
 
-int	open_file(char	*name_file)
+int	open_file(t_leak *leak, char *name_file)
 {
   int	fd;
   char	*str;
@@ -25,14 +25,19 @@ int	open_file(char	*name_file)
   while ((str = get_next_line(fd)) != NULL)
     {
       data = alloc(data, str);
+      leak->memory = alloc_leak(leak->memory, data);
+      leak->memory = alloc_leak(leak->memory, str);
       free(str);
     }
   close(fd);
   if (data != NULL && count_tab(data) > 10)
     {
       str_tmp0 = rostring(data[0]);
+      leak->memory = alloc_leak(leak->memory, str_tmp0);
       str_tmp1 = rostring(data[8]);
+      leak->memory = alloc_leak(leak->memory, str_tmp1);
       str_check = rostring(data[1]);
+      leak->memory = alloc_leak(leak->memory, str_check);
       if (strcmp("/*", str_tmp0) == 0 && strcmp("*/", str_tmp1) == 0)
 	{
 	  if (strstr(str_check, "1;2802;0c") != NULL || strncmp(str_check,"**", 2) != 0)
@@ -40,6 +45,7 @@ int	open_file(char	*name_file)
 	      printf("Clean file [%s]\n", name_file);
 	      free(data[1]);
 	      data[1] = clean_line(str_check);
+	      leak->memory = alloc_leak(leak->memory, data[1]);
 	      write_clean(data, name_file);
 	    }
 	}

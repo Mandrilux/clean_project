@@ -1,11 +1,11 @@
 /*
-** main.c for  in /home/baptiste/project/clean_project
+** main.c for in /home/baptiste/project/clean_project
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 13:12:43 2016
-** Last update Thu May 19 09:44:03 2016 
+** Last update Thu May 19 19:24:07 2016 
 */
 
 #include "my.h"
@@ -14,10 +14,11 @@ int             main(__attribute__((unused)) int argc, __attribute__((unused))
 		     char **argv)
 {
   DIR		*rep;
+  t_leak	leak;
 
   if (directory_open(&rep) == -1)
     return (EXIT_FAILURE);
-  display_directory(&rep);
+  display_directory(&leak, &rep);
   return (EXIT_SUCCESS);
 }
 
@@ -33,7 +34,7 @@ int		directory_open(DIR **rep)
     return (1);
 }
 
-int    display_directory(DIR **rep)
+int    display_directory(t_leak *leak, DIR **rep)
 {
   struct dirent *ent;
 
@@ -44,7 +45,7 @@ int    display_directory(DIR **rep)
 	  if (strlen(ent->d_name) > 2)
 	    {
 	      if (strcmp(&(ent->d_name[strlen(ent->d_name) - 2]), ".c") == 0)
-		open_file(ent->d_name);
+		open_file(leak, ent->d_name);
 	      if (strncmp("vgcore", ent->d_name, 6) == 0)
 		{
 		  printf("[+] remove %s successful\n", ent->d_name);

@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:49:26 2016
-** Last update Wed May 18 14:02:56 2016 
+** Last update Thu May 19 19:22:08 2016 
 */
 
 #ifndef MY_H_
@@ -21,6 +21,11 @@
 #include <sys/types.h>
 #include "get_next_line.h"
 
+typedef	struct	s_leak
+{
+	void	**memory;
+}               t_leak;
+
 char		*strdup(const char *s);
 
 		/* free.c */
@@ -33,8 +38,13 @@ int		 count_tab(char **tab);
 
 		/* read.c */
 
-int		 open_file(char *name_file);
+int		 open_file(t_leak *leak, char *name_file);
 int		 write_clean(char **data, char *name);
+
+		/* memory.c */
+
+void		 **alloc_leak(void **memory, void *p);
+int		 count_memory(void **tab);
 
 		/* str.c */
 
@@ -50,6 +60,6 @@ int		 my_memset_len(char *s, char c, int size, int flag);
 		/* main.c */
 
 int		 directory_open(DIR **rep);
-int		 display_directory(DIR **rep);
+int		 display_directory(t_leak *leak, DIR **rep);
 
 #endif /* MY_H_ */
