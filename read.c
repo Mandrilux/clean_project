@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:37:10 2016
-** Last update Thu May 19 19:37:50 2016 
+** Last update Fri May 20 09:25:59 2016 
 */
 
 #include "my.h"
@@ -27,7 +27,7 @@ int	open_file(t_leak *leak, char *name_file)
       data = alloc(data, str);
       leak->memory = alloc_leak(leak->memory, data);
       leak->memory = alloc_leak(leak->memory, str);
-      free(str);
+      /* free(str); */
     }
   close(fd);
   if (data != NULL && count_tab(data) > 10)
@@ -43,18 +43,18 @@ int	open_file(t_leak *leak, char *name_file)
 	  if (strstr(str_check, "1;2802;0c") != NULL || strncmp(str_check,"**", 2) != 0)
 	    {
 	      printf("Clean file [%s]\n", name_file);
-	      free(data[1]);
+	      /* free(data[1]); */
 	      data[1] = clean_line(str_check);
 	      leak->memory = alloc_leak(leak->memory, data[1]);
 	      write_clean(data, name_file);
 	    }
 	}
-      free(str_tmp0);
-      free(str_tmp1);
-      free(str_check);
+      /* free(str_tmp0); */
+      /* free(str_tmp1); */
+      /* free(str_check); */
     }
-  if (data != NULL)
-    free_tab(data);
+  /* if (data != NULL) */
+  /*   free_tab(data); */
   return (1);
 }
 

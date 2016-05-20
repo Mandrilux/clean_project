@@ -28,10 +28,6 @@ typedef	struct	s_leak
 
 char		*strdup(const char *s);
 
-		/* free.c */
-
-int		 free_tab(char **tab);
-
 		/* check.c */
 
 int		 count_tab(char **tab);
@@ -45,6 +41,8 @@ int		 write_clean(char **data, char *name);
 
 void		 **alloc_leak(void **memory, void *p);
 int		 count_memory(void **tab);
+int		 free_memory(void **tab);
+int		 free_tab(char **tab);
 
 		/* str.c */
 

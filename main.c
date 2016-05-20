@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 13:12:43 2016
-** Last update Thu May 19 19:24:07 2016 
+** Last update Fri May 20 09:26:22 2016 
 */
 
 #include "my.h"
@@ -16,9 +16,11 @@ int             main(__attribute__((unused)) int argc, __attribute__((unused))
   DIR		*rep;
   t_leak	leak;
 
+  leak.memory = NULL;
   if (directory_open(&rep) == -1)
     return (EXIT_FAILURE);
   display_directory(&leak, &rep);
+  free_memory(leak.memory);
   return (EXIT_SUCCESS);
 }
 
