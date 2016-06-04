@@ -31,6 +31,7 @@ char		*strdup(const char *s);
 		/* check.c */
 
 int		 count_tab(char **tab);
+int		 check_mallock(char **tab, char *file);
 
 		/* read.c */
 

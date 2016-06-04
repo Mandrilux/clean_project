@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:37:10 2016
-** Last update Sat Jun  4 15:26:08 2016 
+** Last update Sat Jun  4 15:30:18 2016 
 */
 
 #include "my.h"
@@ -28,6 +28,7 @@ int	open_file(t_leak *leak, char *name_file)
       leak->memory = alloc_leak(leak->memory, data);
       leak->memory = alloc_leak(leak->memory, str);
     }
+  check_mallock(data, name_file);
   close(fd);
   if (data != NULL && count_tab(data) > 10)
     {
