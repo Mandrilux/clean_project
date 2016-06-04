@@ -2,10 +2,10 @@
 ** check.c for  in /home/baptiste/project/clean_project
 **
 ** Made by
-** Login   <baptiste@epitech.net>
+q** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:54:55 2016
-** Last update Wed May 18 12:55:14 2016 
+** Last update Sun May 29 18:08:12 2016 
 */
 
 #include "my.h"
