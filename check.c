@@ -5,7 +5,7 @@
 q** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:54:55 2016
-** Last update Sun Jun  5 11:43:45 2016 
+** Last update Sun Jun  5 11:57:21 2016 
 */
 
 #include "my.h"
@@ -34,6 +34,10 @@ int	check_mallock(char **tab, char *file)
 	}
       else if (strstr(tab[i], " ,") != NULL)
 	printf("[Virgule] mal placé dans le fichier %s ligne [%d]\n", file, i + 1);
+      else if (strstr(tab[i], "( ") != NULL)
+	printf("[Parenthese] mal placé dans le fichier %s ligne [%d]\n", file, i + 1);
+      else if (strstr(tab[i], " )") != NULL)
+	printf("[Parenthese] mal placé dans le fichier %s ligne [%d]\n", file, i + 1);
     }
   return (1);
 }
