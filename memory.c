@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Thu May 19 19:29:41 2016
-** Last update Fri May 20 09:27:47 2016 
+** Last update Sun Jun  5 11:48:42 2016 
 */
 
 #include "my.h"
@@ -49,8 +49,11 @@ int	free_memory(void **tab)
 {
   int	i = -1;
 
-  while(tab[++i] != NULL)
-    free(tab[i]);
+  if (tab != NULL)
+    {
+      while(tab[++i] != NULL)
+	free(tab[i]);
+    }
   return(1);
 }
 
