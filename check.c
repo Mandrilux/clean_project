@@ -2,10 +2,10 @@
 ** check.c for  in /home/baptiste/project/clean_project
 **
 ** Made by
-q** Login   <baptiste@epitech.net>
+** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed May 18 12:54:55 2016
-** Last update Sun Jun  5 12:02:37 2016 
+** Last update Sun Jun  5 12:14:31 2016 
 */
 
 #include "my.h"
@@ -27,9 +27,10 @@ int	check_mallock(char **tab, char *file)
   i = -1;
   while (tab[++i] != NULL)
     {
-      if (strstr(tab[i],"malloc") != NULL)
+      if (i < 10 && strstr(tab[i], "*") != NULL);
+      else if (strstr(tab[i],"malloc") != NULL)
 	{
-	  if (strstr(tab[i], "NULL") == NULL)
+	  if (strstr(tab[i], "NULL") == NULL && strstr(tab[i], "if") == NULL)
 	    printf("[Malloc] non verifier dans le fichier %s ligne [%d]\n", file, i + 1);
 	}
       else if (strstr(tab[i], " ,") != NULL)
@@ -40,6 +41,8 @@ int	check_mallock(char **tab, char *file)
 	printf("[Parenthese] mal placé dans le fichier %s ligne [%d]\n", file, i + 1);
       else if (strlen(tab[i]) > 80)
 	printf("[%d caractère] dans le fichier %s ligne [%d]\n", (int)strlen(tab[i]), file, i + 1);
+      else if (strstr(tab[i], "//") != NULL || strstr(tab[i], "/*") != NULL)
+	printf("[Commentaire] dans le fichier %s ligne [%d]\n", file, i + 1);
     }
   return (1);
 }
